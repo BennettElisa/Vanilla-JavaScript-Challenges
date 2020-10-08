@@ -1,0 +1,9 @@
+const largestAndSmallest = array => {
+  // use spread operator to return all the numeric values within array
+  
+  return [Math.min(...array), Math.max(...array)]
+}
+
+console.log(largestAndSmallest([1, 2, 3, 4, 5])); // [1, 5]
+console.log(largestAndSmallest([90, 30, 44, 66, 10])); // [10, 90]
+console.log(largestAndSmallest([16, -70, 122])); // [-70, 122]
