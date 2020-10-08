@@ -1,0 +1,33 @@
+function modeMean(array) {
+ 
+ // determine the mean of the array
+ // sum up all number and divide by length of array
+ // round down using Math.floor
+ 
+ let sum = array.reduce((a,b,index) => a + b);
+ let mean = Math.floor(sum/array.length)
+
+ 
+ // determine mode of array by building an object to determine highest frequncey
+ let frequncey = array.reduce((obj, key) => {
+   if(obj[key]){
+     obj[key]++
+   } else {
+     obj[key] = 1
+   }
+   return obj
+ }, {});  
+
+let maxNum = 1;
+let mode;
+
+for(let keys in frequncey){
+  if(frequncey[keys] > maxNum){
+    mode = parseInt(keys)
+  }
+}
+ return mean === mode // Line 32 --> 3 === 5 // false, Line 33 --> 5 === 5 // true
+}
+
+modeMean([1,2,2,5,3,6,7,5]) // false
+modemean([2,2,5,5,4,6,11,5]) // true
